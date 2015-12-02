@@ -1,6 +1,6 @@
 <?php 
 global $Custom_pagetitle, $slugs; 
-
+$logo = contact_form_7_sms_addon_rp_sms()->get_vars('URL').'/admin/logo.png';
 $menu =''; 
 $menus = array('history' => __('History',CF7SI_TXT),'settings' => __('Settings',CF7SI_TXT));
 $link = menu_page_url($slugs,false);
@@ -20,7 +20,9 @@ foreach($menus as $menuI => $menuV){
 ?>
 
 <div class="wrap">
-	<h2 class="nav-tab-wrapper woo-nav-tab-wrapper"><?php echo $menu; ?></h2>
+	<img src="<?php echo $logo; ?>" style="float: right; width: 13%; margin-right: 5px;"/>
+	<h2 class="nav-tab-wrapper woo-nav-tab-wrapper"><?php echo $menu; ?> 
+	</h2>
 	<?php
 		if(isset($_REQUEST['tab'])){
 			if($_REQUEST['tab'] == 'history'){

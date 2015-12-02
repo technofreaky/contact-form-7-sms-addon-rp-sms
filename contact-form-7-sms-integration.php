@@ -53,26 +53,6 @@ class contact_form_7_sms_addon_rp_sms {
         $this->define_constant();
 		$this->set_vars();
         $this->load_required_files();
-		
-		
-		
-$default_args = array(
-'dbslug' => 'cf7isi',
-'welcome_slug' => CF7SI_SLUG.'-welcome-page',
-'wp_plugin_slug' => CF7SI_SLUG,
-'wp_plugin_url' => 'https://wordpress.org/plugins/cf7-international-sms-integration/',
-'tweet_text' => __('Adds an SMS box to your Contact Form 7 options pages, fill this in and you\'ll get a text message each time somebody fills out one of your forms',CF7SI_TXT),
-'twitter_user' => 'varunsridharan2',
-'twitter_hash' => 'CF7InternationSMSintegration',
-'gitub_user' => 'technofreaky',
-'github_repo' => 'cf7-international-sms-intergation',
-'plugin_name' => CF7SI_NAME,
-'version' => $this->version,
-'template' => $this->get_vars('PATH').'template/welcome-page.php',
-'menu_name' => CF7SI_NAME.' Welcome Page',
-'plugin_file' => __FILE__,
-);
-new cf7isi_activation_welcome_page($default_args);			
         $this->init_class();
         add_action( 'init', array( $this, 'init' ));
     }
@@ -89,13 +69,10 @@ new cf7isi_activation_welcome_page($default_args);
      * Loads Required Plugins For Plugin
      */
     private function load_required_files(){
-	  $this->load_files($this->get_vars('PATH').'includes/class-*.php');
        $this->load_files($this->get_vars('PATH').'includes/common-class-*.php');
-        
        if($this->is_request('admin')){
            $this->load_files($this->get_vars('PATH').'admin/class-*.php');
        } 
-
     }
     
     /**
